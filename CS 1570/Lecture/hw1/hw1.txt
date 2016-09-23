@@ -1,0 +1,34 @@
+Programmer: Kevin Schoonover
+Instructor: Dr. Leopold
+Section: 1D
+Date: 8/27/16
+Description: Homework 1: Algorithms
+
+Algorithm #1:
+Step 1) Each person checks if they are holding their own student ID. If they
+do, the student steps aside; otherwise, they form a circle
+Step 2) If the circle contains no people, GO TO (4)
+Step 3) Each person passes the ID they are holding clockwise and then GO
+TO (1)
+Step 4) Output 'Every person is sorted'
+
+Algorithm #2:
+Step 1) If the initial input is a string, convert it into an integer
+Step 2) base12 = the result of converting the input into a integer
+Step 3) base10 = 0 //the result
+Step 4) Break the base12 number into n amount of digits
+Step 5) digit[0..n] = resultant digits from breaking up base12
+Step 6) counter = the highest index of digit (noted n in step 5)
+Step 7) if counter => 0 then base10 = base10 + digit[counter] *  12 ^ counter, counter = counter - 1, and GO TO (7) else GO TO (8)
+Step 8) Output "The number", base 12, "is equal to", base10, "in base 10"
+
+Algorithm #3:
+Step 1) If first inputted word or second inputted word is empty string output "Not a valid input" and END PROGRAM
+Step 2) Break up the first inputted word into its individual letters and put it in the variable wordOneLetter[1..n]
+Step 3) Break up the second inputted word into its individual letters and put it in the variable wordTwoLetter[1..n]
+Step 4) counter = 1, total = 0
+Step 5) valueWordOne = lexographical value of wordOneLetter[counter], valueWordTwo = lexographical value of wordTwoLetter[counter]
+Step 6) if valueWordOne == 0 and valueWordTwo == 0 then GO TO (9) else GO TO (7)
+Step 7) if the valueWordOne == valueWordTwo then counter = counter + 1 and GO TO (5) else GO TO (8)
+Step 8) total = absolutevalue(valueWordOne - valueWordTwo)
+Step 9) Output "The lexographical difference is", total
