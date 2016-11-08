@@ -1,0 +1,5 @@
+Uncle;Scott Fitzgerald;2
+Aunt;Dolores Umbridge;3
+Friend;Brad Pitt;7
+Brother;Sheldon Cooper;2
+Sister;Cercei Lannister;1
