@@ -69,89 +69,13 @@ int main()
       //////////
       if(candidate == 1)
       {
-        //////////
-        // Copying the filename into the interjections variable for modular
-        // handling of parameters and readability.
-        //////////
-        strcpy(interjections,CANDIDATE1_INTERJECTIONS);
-        strcpy(sentences,CANDIDATE1_SENTENCES);
-
-        //////////
-        // Handling of the printing, scoring, and formatting of the prefix
-        // if the probably of CHANCE_OF_PREFIX successed.
-        /////////
-        if(probabilityHandler(CHANCE_OF_PREFIX))
-        {
-          prefixHandler(curFile, candidate1Score);
-        }
-
-        //////////
-        // Handling of the printing, scoring, and formatting of the main
-        // sentence of the answer including partitioning of the random files
-        // and interjections on probability
-        //////////
-        sentenceHandler(curFile, sentences, candidate1Score, interjections);
-
-        //////////
-        // adding the current answer score of the question to global variable
-        // for persistance to outout the correct overall winner.
-        //////////
-        candidate1TotalScore +=  scoreHandler(question, candidate1Score);
-
-        /////////
-        // Outputting the score of the current answer.
-        //////////
-        cout << "The score of this answer was: " << candidate1Score << endl
-             << endl;
-
-        //////////
-        // Reseting the current candidate score for the next iteration of
-        // question
-        //////////
-        candidate1Score = 0;
+        candidate1Handler(interjections, sentences, curFile,
+                                      candidate1Score, question, candidate1TotalScore);
       }
       else if(candidate == 2)
       {
-        //////////
-        // Copying the filename into the interjections variable for modular
-        // handling of parameters and readability.
-        //////////
-        strcpy(interjections,CANDIDATE2_INTERJECTIONS);
-        strcpy(sentences,CANDIDATE2_SENTENCES);
-
-        //////////
-        // Handling of the printing, scoring, and formatting of the prefix
-        // if the probably of CHANCE_OF_PREFIX successed.
-        //////////
-        if(probabilityHandler(CHANCE_OF_PREFIX))
-        {
-          prefixHandler(curFile, candidate2Score);
-        }
-
-        //////////
-        // Handling of the printing, scoring, and formatting of the main
-        // sentence of the answer including partitioning of the random files
-        // and interjections on probability
-        //////////
-        sentenceHandler(curFile, sentences, candidate2Score, interjections);
-
-        //////////
-        // adding the current answer score of the question to global variable
-        // for persistance to outout the correct overall winner.
-        //////////
-        candidate2TotalScore += scoreHandler(question, candidate2Score);
-
-        //////////
-        // Outputting the score of the current answer.
-        //////////
-        cout << "The score of this answer was: " << candidate2Score << endl
-             << endl;
-
-         //////////
-         // Reseting the current candidate score for the next iteration of
-         // question
-         //////////
-        candidate2Score = 0;
+        candidate2Handler(interjections, sentences, curFile,
+                                       candidate2Score, question, candidate2TotalScore);
       }
   }
 

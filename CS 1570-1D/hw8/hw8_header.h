@@ -227,7 +227,7 @@ void sentenceHandler(ifstream& in, const char sentenceFile[], int &candScore,
 
 //////////
 // @Pre:  q should be the user's question and score should be the respective
-//        candidates score that the question is pointed to. q must have a 
+//        candidates score that the question is pointed to. q must have a
 //        length > 0
 // @Post: The function returns the score and also passess score by reference
 //        in order to ensure proper ooutput handling of the total persistant
@@ -276,4 +276,31 @@ void punctHandler(char sentence[]);
 //////////
 void declareWinner(const int cand1Score, const int cand2Score);
 
+///////////
+//@Pre: in must be an open fstream. interject and sentence must be at least 50 characters big.
+// CANDIDATE1_PREFIXES, CANDIDATE1_SENTENCES and PREFIXES must all be
+// defined values that are the filenames of the files for the respective candidates.
+//@Post: The candidates answer has been sent to cout by sentenceHandler, the candidates total
+// score has been updated, and the score for the current answer has been sent to cout.
+//@Description: The function handles everything that happens when it is the candidates
+// turn to speak. It goes into their respective files, pulls out parts of the sentences, and
+// outputs them. then it calculates score based on the question and answer, and adds it to
+// that candidates total as well as outputting their score for that answer.
+//////////
+void candidate1Handler(char interject[], char sentence[],
+                                    ifstream & in, int cand1Score, char question[], int & candidate1TotalScore);
+
+
+//////////
+//@Pre: in must be an open fstream. interject and sentence must be at least 50 characters big.
+// CANDIDATE2_PREFIXES, CANDIDATE2_SENTENCES and PREFIXES must all be
+// defined values that are the filenames of the files for the respective candidates.
+//@Post: The candidates answer has been sent to cout by sentenceHandler, the candidates total
+ // score has been updated, and the score for the current answer has been sent to cout.
+ //@Description: The function handles everything that happens when it is the candidates
+// turn to speak. It goes into their respective files, pulls out parts of the sentences, and
+// outputs them. then it calculates score based on the question and answer, and adds it to
+ // that candidates total as well as outputting their score for that answer.
+void candidate2Handler(char interject[], char sentence[],
+                                    ifstream & in, int cand2Score, char question[], int & candidate2TotalScore);
 #endif
