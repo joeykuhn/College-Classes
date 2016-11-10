@@ -69,12 +69,16 @@ int main()
       //////////
       if(candidate == 1)
       {
-        candidate1Handler(interjections, sentences, curFile,
+        strcpy(interjections, CANDIDATE1_INTERJECTIONS);
+        strcpy(sentences, CANDIDATE1_SENTENCES);
+        candidateHandler(interjections, sentences, curFile,
                                       candidate1Score, question, candidate1TotalScore);
       }
       else if(candidate == 2)
       {
-        candidate2Handler(interjections, sentences, curFile,
+        strcpy(interjections, CANDIDATE2_INTERJECTIONS);
+        strcpy(sentences, CANDIDATE2_SENTENCES);
+        candidateHandler(interjections, sentences, curFile,
                                        candidate2Score, question, candidate2TotalScore);
       }
   }

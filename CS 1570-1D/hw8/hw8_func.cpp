@@ -442,42 +442,20 @@ void declareWinner(const int cand1Score, const int cand2Score)
   return;
 }
 
-void candidate1Handler(char interject[], char sentence[], ifstream & in,
-        int cand1Score, char question[], int & candidate1TotalScore)
+void candidateHandler(char interject[], char sentence[], ifstream & in,
+        int candScore, char question[], int & candidateTotalScore)
 {
-  strcpy(interject, CANDIDATE1_INTERJECTIONS);
-  strcpy(sentence, CANDIDATE1_SENTENCES);
   if(probabilityHandler(CHANCE_OF_PREFIX))
   {
-    prefixHandler(in, cand1Score);
+    prefixHandler(in, candScore);
   }
 
-  sentenceHandler(in, sentence, cand1Score, interject);
+  sentenceHandler(in, sentence, candScore, interject);
 
-  candidate1TotalScore += scoreHandler(question, cand1Score);
+  candidateTotalScore += scoreHandler(question, candScore);
 
-  cout << "The score of this answer was: " << cand1Score << endl << endl;
+  cout << "The score of this answer was: " << candScore << endl << endl;
 
-  cand1Score = 0;
-  return;
-}
-
-void candidate2Handler(char interject[], char sentence[], ifstream & in,
-         int cand2Score, char question[],int & candidate2TotalScore)
-{
-  strcpy(interject, CANDIDATE2_INTERJECTIONS);
-  strcpy(sentence, CANDIDATE2_SENTENCES);
-  if(probabilityHandler(CHANCE_OF_PREFIX));
-  {
-    prefixHandler(in, cand2Score);
-  }
-
-  sentenceHandler(in, sentence, cand2Score, interject);
-
-  candidate2TotalScore += scoreHandler(question, cand2Score);
-
-  cout << "The score of this answer was: " << cand2Score << endl << endl;
-
-  cand2Score = 0;
+  candScore = 0;
   return;
 }
